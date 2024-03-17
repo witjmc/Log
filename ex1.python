@@ -5,3 +5,10 @@ from sklearn.ensemble import IsolationForest
 from sklearn.model_selection import train_trest_split
 from sklearn.preprocessing import LabelEncoder
 # numpy, pandas, matplotli.pyplot 그리고 sklearn 모듈 가져오기 
+# numpy모듈은 높은 수준의 연산을 수행할 수 있기 때문에 다른 많은 모듈과 종속성을 갖고 있다.
+# pandas 는 다양한 형식의 데이터 파일을 읽어서 데이터 프레임 객체로 저장하기 위해 사용되는 모듈로, 일반적으로 데이터 과학에 널리 사용되는 프레임워크
+# 이러한 데이터 프레임은 배열과 유사한 방식으로 데이터 항목을 보관하며, 값들의 표로 생각할 수 있다.
+# Matplotlib(맷플롯립) 은 사용자 정의형 데이터 출력을 위한 파이썬 라이브러리이다.
+# Scikit-learn(사이킷런) 은 데이터 세트에 다양한 머신러닝 모델을 적용할 수 있게 해주고 데이터 분석을 위한 도구를 제공하는 패키지이다. 
+
+%matplotlib inline
