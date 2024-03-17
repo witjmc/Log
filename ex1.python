@@ -1,0 +1,7 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.ensemble import IsolationForest
+from sklearn.model_selection import train_trest_split
+from sklearn.preprocessing import LabelEncoder
+# numpy, pandas, matplotli.pyplot 그리고 sklearn 모듈 가져오기 
