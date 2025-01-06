@@ -1,0 +1,71 @@
+package logger;
+import java.util.logging.*;
+import javax.swing.JOptionPane;
+ 
+public class logger {
+       // Logger 인스턴스 생성
+    private static final Logger logger = Logger.getLogger(logger.class.getName());
+ 
+    
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        // 객체 생성 및 계정 추가
+        Log account = new Log(1, 2, 3, 4);
+        System.out.println("계정 id :"+ account.getId());
+   
+        
+        // 로그 레벨 설정
+        logger.setLevel(Level.ALL);
+ 
+        
+        // 다양한 레벨의 로그 메시지 출력 및 푸시 알림
+        pushApi(Level.SEVERE, "This is a SEVERE log message");
+        pushApi(Level.WARNING, "This is a WARNING log message");
+        pushApi(Level.INFO, "This is an INFO log message");
+        pushApi(Level.CONFIG, "This is a CONFIG log message");
+        pushApi(Level.FINE, "This is a FINE log message");
+        pushApi(Level.FINER, "This is a FINER log message");
+        pushApi(Level.FINEST, "This is a FINEST log message");
+        
+        
+    }
+    
+     // Push API 메서드
+    public static void pushApi(Level level, String message) {
+        logger.log(level, message); // 로그 출력
+ 
+        // 레벨에 따라 팝업 메시지 색상 변경 (기본 텍스트 출력)
+        String title;
+        int messageType;
+ 
+        if (level == Level.SEVERE) {
+            title = "SEVERE";
+            messageType = JOptionPane.ERROR_MESSAGE;
+        } else if (level == Level.WARNING) {
+            title = "WARNING";
+            messageType = JOptionPane.WARNING_MESSAGE;
+        } else if (level == Level.INFO || level == Level.CONFIG) {
+            title = "INFO";
+            messageType = JOptionPane.INFORMATION_MESSAGE;
+        } else if (level == Level.FINE || level == Level.FINER || level == Level.FINEST) {
+            title = "DEBUG";
+            messageType = JOptionPane.PLAIN_MESSAGE; // Debug 메시지용
+        } else {
+            title = "UNKNOWN";
+            messageType = JOptionPane.PLAIN_MESSAGE;
+        }
+        
+        // DEBUG 레벨에서는 팝업을 생략할 수 있도록 설정
+        if (level == Level.FINE || level == Level.FINER || level == Level.FINEST) {
+            System.out.println("[DEBUG] " + message); // 디버깅 메시지는 콘솔에만 출력
+        } else {
+            // 다른 레벨은 팝업 표시
+            //JOptionPane.showMessageDialog(null, message, title, messageType);
+        }
+        
+ 
+        // 팝업 창 표시
+        JOptionPane.showMessageDialog(null, message, title, messageType);
+    }
+ 
+}
