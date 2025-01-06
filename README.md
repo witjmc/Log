@@ -10,3 +10,5 @@
    -pandas 0.23.4
    -scikit-learn 0.19.1
    -matplotlib 2.2.2
+
+# Java 로 Logger 만들기
