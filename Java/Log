@@ -1,0 +1,23 @@
+package logger;
+ 
+public class Log {
+     private int id;
+     private int balance;
+     private int minBalance;
+     private int maxBalance;
+ 
+     public Log(int id, int balance, int minBalance, int maxBalance) {
+         this.id = id;
+         this.balance = balance;
+         this.minBalance = minBalance;
+         this.maxBalance = maxBalance;
+     }
+ 
+     public int getId() {
+         return id;
+     }
+ 
+     public void setId(int id) {
+         this.id = id;
+     }
+}
